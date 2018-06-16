@@ -10,6 +10,8 @@ dotfiles:
 	ln -snf $(CURDIR)/gitconfig $(HOME)/.gitconfig;
 	mkdir -p $(HOME)/.config;
 	ln -snf $(CURDIR)/.i3 $(HOME)/.config/.i3;
+	mkdir -p $(HOME)/.local/share;
+	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
 
 .PHONY: bin
 bin:
