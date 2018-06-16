@@ -35,6 +35,54 @@
 *.color7:       #707880
 *.color15:      #c5c8c6
 
-URxvt.font: Xft:Ubuntu Mono:size=27:antialias=true:hinting=true
-URxvt*boldFont: xft:Ubuntu Mono:bold:size=14:pixelsize=27:antialias=true:hinting=true
+*utf8:		1
+*saveLines:	999999
+
+!-- Xft settings -- !
+Xft.dpi:        144
+Xft.rgba:       rgb
+Xft.autohint:   0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting:    1
+Xft.antialias:  1
+
+URxvt.font: xft:Ubuntu Mono:pixelsize=22:antialias=true:hinting=full
+URxvt.boldFont: xft:Ubuntu Mono:style=bold:pixelsize=22:antialias=true:hinting:full
+
+
+URxvt*scrollTtyOutput:	false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
+*scrollBar:             false
+
+URxvt.perl-ext-common:      default,matcher,selection-to-clipboard,clipboard
+URxvt.matcher.button:       1
+URxvt.url-launcher:         /usr/bin/xdg-open
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

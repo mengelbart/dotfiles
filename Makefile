@@ -21,4 +21,7 @@ bin:
 	done;
 
 
-
+.PHONY: etc
+etc:
+	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf /etc/X11/xorg.conf;
+	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/60-libinput.conf /etc/X11/xorg.conf.d/60-libinput.conf

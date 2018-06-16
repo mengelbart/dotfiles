@@ -22,7 +22,9 @@ install_graphics() {
 
 install_wm() {
 
-	apt-get install -y --no-install-recommends i3
+	apt-get install -y --no-install-recommends \
+		i3 \
+		xserver-xorg-input-libinput
 
 	mkdir -p /etc/X11/xorg.conf.d/
 	curl -sSL https://raw.githubusercontent.com/jessfraz/dotfiles/master/etc/X11/xorg.conf.d/50-synaptics-clickpad.conf > /etc/X11/xorg.conf.d/50-synaptics-clickpad.conf
