@@ -37,7 +37,9 @@ install_wm() {
 main() {
 	local cmd=$1
 	
-	if [[ $cmd == "graphics" ]]; then
+	if [[ $cmd == "base" ]]; then
+		base
+	elif [[ $cmd == "graphics" ]]; then
 		install_graphics
 	elif [[ $cmd == "wm" ]]; then
 		install_wm
