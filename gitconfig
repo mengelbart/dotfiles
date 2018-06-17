@@ -19,3 +19,6 @@
 	sync = codereview sync
 [http]
 	cookiefile = /Users/mathis/.gitcookies
+[user]
+	name = Mathis Engelbart
+	email = mathis.engelbart@gmail.com
