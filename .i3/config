@@ -137,7 +137,7 @@ for_window [instance="^mosh$"] focus
 
 # autostart
 #exec xset s 0 -dpms
-exec urxvt -name welcome
+exec `$TERMINAL` -name welcome
 #exec firefox
 #exec urxvt -name mail -e zsh -c "mutt"
 #exec urxvt -name mosh -e zsh -c "mosh qube -- tmux a"
