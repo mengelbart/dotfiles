@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for file in ~/.{bashrc,bash_aliases,exports,path}; do
-	if [[ -r $"file" ]] && [[ -f $"file" ]]; then
+	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"
 	fi
