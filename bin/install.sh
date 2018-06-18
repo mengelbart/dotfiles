@@ -3,6 +3,25 @@
 set -e
 set -o pipefail
 
+# get user, taken from jessie frazelle
+get_user() {
+	if [ -z "${TARGET_USER-}" ]; then
+		mapfile -t options < <(find /home/* -maxdepth 0 -printf "%f\\n" -type d)
+		if [ "${#options[@]}" -eq "1" ]; then
+			readonly TARGET_USER="${options[0]}"
+			echo "Using user account: ${TARGET_USER}"
+			return
+		fi
+
+		PS3='Which user account should be used? '
+
+		select opt in "${options[@]}"; do
+			readonly TARGET_USER=$opt
+			break
+		done
+	fi
+}
+
 check_sudo() {
 	if [ "$EUID" -ne 0 ]; then
 		echo "Please run as root."
@@ -28,11 +47,17 @@ base() {
 	apt update
 	apt -y upgrade
 	apt install -y --no-install-recommends \
+		apt-transport-https \
+		ca-certificates \
 		curl \
 		git \
+		gnupg2 \
 		make \
 		network-manager \
+		resolvconf \
+		software-properties-common \
 		sudo \
+		tree \
 		unzip \
 		rxvt-unicode-256color \
 		vim-nox
@@ -45,6 +70,7 @@ base() {
 
 install_graphics() {
 	apt install -y --no-install-recommends \
+		xcompmgr \
 		xorg \
 		xserver-xorg \
 		xserver-xorg-video-intel
@@ -87,11 +113,29 @@ install_dotfiles() {
 
 install_vim() {
 	(
-	sudo rm -rf "${HOME}/.vim"
+	rm -rf "${HOME}/.vim"
 	git clone --recursive git@github.com:mengelbart/.vim.git "${HOME}/.vim"
 	cd "${HOME}/.vim"
 	make install
 	)
+}
+
+install_docker() {
+	apt update
+
+	curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+	add-apt-repository \
+		"deb [arch=amd64] https://download.docker.com/linux/debian \
+		$(lsb_release -cs) \
+		stable"
+
+	apt update
+	apt install docker-ce
+
+	#groupadd docker
+	usermod -aG docker "$TARGET_USER"
+
+	systemctl enable docker
 }
 
 main() {
@@ -114,6 +158,9 @@ main() {
 		install_dotfiles
 	elif [[ $cmd == "vim" ]]; then
 		install_vim
+	elif [[ $cmd == "docker" ]]; then
+		get_user
+		install_docker
 	fi
 
 }
