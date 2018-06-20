@@ -12,8 +12,10 @@ dotfiles:
 	ln -snf $(CURDIR)/.i3 $(HOME)/.config/.i3;
 	mkdir -p $(HOME)/.local/share;
 	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
-	mkdir -p $(HOME)/.ssh;
-	cp $(CURDIR)/.ssh/config $(HOME)/.ssh/;
+	if [ ! -e $(HOME)/.ssh ]; then \
+		mkdir -p $(HOME)/.ssh; \
+		cp $(CURDIR)/.ssh/config $(HOME)/.ssh/; \
+	fi
 
 .PHONY: bin
 bin:
