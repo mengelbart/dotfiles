@@ -47,6 +47,7 @@ base() {
 	apt update
 	apt -y upgrade
 	apt install -y --no-install-recommends \
+		alsa-utils \
 		apt-transport-https \
 		ca-certificates \
 		curl \
