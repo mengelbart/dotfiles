@@ -2,7 +2,7 @@
 
 .PHONY: dotfiles
 dotfiles:
-	for file in `find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp"`; do \
+	for file in `find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".git" -not -name ".*.swp" -not -name ".ssh"`; do \
 		f=`basename $$file`; \
 		ln -snf $$file $(HOME)/$$f; \
 	done; \
@@ -12,6 +12,8 @@ dotfiles:
 	ln -snf $(CURDIR)/.i3 $(HOME)/.config/.i3;
 	mkdir -p $(HOME)/.local/share;
 	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
+	mkdir -p $(HOME)/.ssh;
+	cp $(CURDIR)/.ssh/config $(HOME)/.ssh/;
 
 .PHONY: bin
 bin:
