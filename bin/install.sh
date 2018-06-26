@@ -139,6 +139,37 @@ install_docker() {
 	systemctl enable docker
 }
 
+install_go() {
+	export GO_VERSION
+	GO_VERSION=$(curl -sSL "https://golang.org/VERSION?m=text")
+	export GO_SRC=/usr/local/go
+	export GOROOT_BOOTSTRAP=/usr/local/go1.4
+	if [[ ! -d "$GOROOT_BOOTSTRAP" ]]; then
+		git clone https://go.googlesource.com/go "$GOROOT_BOOTSTRAP"
+	fi
+	if [[ -d "$GO_SRC" ]]; then
+		sudo rm -rf $GO_SRC
+		sudo rm -rf $GO_PATH
+	fi
+	git clone https://go.googlesource.com/go "$GO_SRC"
+
+
+	(
+	cd $GOROOT_BOOTSTRAP
+	git checkout release-branch.go1.4
+	cd src
+	./make.bash
+	)
+
+	(
+	cd $GO_SRC
+	git checkout $GO_VERSION
+	cd src
+	./all.bash
+	)
+
+}
+
 main() {
 	local cmd=$1
 	
@@ -162,6 +193,8 @@ main() {
 	elif [[ $cmd == "docker" ]]; then
 		get_user
 		install_docker
+	elif [[ $cmd == "go" ]]; then
+		install_go
 	fi
 
 }
