@@ -1,0 +1,14 @@
+#!/bin/bash
+
+ecr() {
+	$(aws ecr get-login --no-include-email --region eu-central-1)
+}
+
+cclean() {
+	docker rm $(docker ps -qa)
+}
+
+iclean() {
+	docker rmi $(docker images -q -f dangling=true)
+}
+

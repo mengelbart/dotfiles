@@ -9,7 +9,7 @@ case $- in
 esac
 
 # load aliases and exports etc.
-for file in ~/.{bash_aliases,exports,path}; do
+for file in ~/.{bash_aliases,exports,functions,path}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"
