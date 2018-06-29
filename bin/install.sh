@@ -49,11 +49,15 @@ base() {
 	apt install -y --no-install-recommends \
 		alsa-utils \
 		apt-transport-https \
+		bc \
 		ca-certificates \
 		curl \
+		gcc \
 		git \
 		gnupg2 \
 		htop \
+		libncurses5-dev \
+		libssl-dev \
 		make \
 		network-manager \
 		resolvconf \
