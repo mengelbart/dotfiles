@@ -29,3 +29,4 @@ bin:
 etc:
 	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf /etc/X11/xorg.conf;
 	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/60-libinput.conf /etc/X11/xorg.conf.d/60-libinput.conf
+	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/10-keyboard.conf /etc/X11/xorg.conf.d/10-keyboard.conf
