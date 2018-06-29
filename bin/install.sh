@@ -31,15 +31,15 @@ check_sudo() {
 
 setup_sources() {
 	cat <<-EOF > /etc/apt/sources.list
-	deb http://ftp.de.debian.org/debian/ stretch main contrib non-free
-	deb-src http://ftp.de.debian.org/debian/ stretch main contrib non-free
+	deb http://ftp.de.debian.org/debian/ buster main contrib non-free
+	deb-src http://ftp.de.debian.org/debian/ buster main contrib non-free
 	
-	deb http://security.debian.org/debian-security stretch/updates main contrib non-free
-	deb-src http://security.debian.org/debian-security stretch/updates main contrib non-free
+	deb http://security.debian.org/debian-security buster/updates main contrib non-free
+	deb-src http://security.debian.org/debian-security buster/updates main contrib non-free
 	
-	# stretch-updates, previously known as 'volatile'
-	deb http://ftp.de.debian.org/debian/ stretch-updates main contrib non-free
-	deb-src http://ftp.de.debian.org/debian/ stretch-updates main contrib non-free
+	# buster-updates, previously known as 'volatile'
+	deb http://ftp.de.debian.org/debian/ buster-updates main contrib non-free
+	deb-src http://ftp.de.debian.org/debian/ buster-updates main contrib non-free
 	EOF
 }
 
@@ -53,6 +53,7 @@ base() {
 		curl \
 		git \
 		gnupg2 \
+		htop \
 		make \
 		network-manager \
 		resolvconf \
@@ -74,7 +75,7 @@ install_graphics() {
 		xcompmgr \
 		xorg \
 		xserver-xorg \
-		xserver-xorg-video-intel
+		xserver-xorg-video-nouveau
 }
 
 install_wm() {
@@ -131,7 +132,8 @@ install_docker() {
 		stable"
 
 	apt update
-	apt install docker-ce
+	apt install -y \
+		docker-ce
 
 	#groupadd docker
 	usermod -aG docker "$TARGET_USER"
@@ -170,6 +172,14 @@ install_go() {
 
 }
 
+aws_cli() {
+	sudo apt-get update
+	sudo apt-get install -y --no-install-recommends python-pip
+
+	pip install setuptools
+	pip install awscli --upgrade --user
+}
+
 main() {
 	local cmd=$1
 	
@@ -195,6 +205,8 @@ main() {
 		install_docker
 	elif [[ $cmd == "go" ]]; then
 		install_go
+	elif [[ $cmd == "aws" ]]; then
+		aws_cli
 	fi
 
 }
