@@ -58,6 +58,7 @@ base() {
 		htop \
 		libncurses5-dev \
 		libssl-dev \
+		jq \
 		make \
 		network-manager \
 		resolvconf \
