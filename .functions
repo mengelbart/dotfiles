@@ -12,3 +12,7 @@ iclean() {
 	docker rmi $(docker images -q -f dangling=true)
 }
 
+node() {
+	docker run -it node:9.6.1 $1
+}
+
