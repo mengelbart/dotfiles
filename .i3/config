@@ -181,7 +181,8 @@ bindsym $mod+r mode "resize"
 bar {
 	position top
 	font pango:Droid Sans 10
-	status_command i3status --config ~/.config/.i3/.i3status.conf
+	#status_command i3status --config ~/.config/.i3/.i3status.conf
+	status_command i3status --config ~/.config/.i3/.i3status.conf | ~/.config/.i3/status.pl
 }
 
 
