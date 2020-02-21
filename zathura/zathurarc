@@ -1,0 +1,4 @@
+
+map [normal] <Left> navigate previous
+map [normal] <Right> navigate next
+

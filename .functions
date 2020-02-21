@@ -13,6 +13,6 @@ iclean() {
 }
 
 node() {
-	docker run -it node:9.6.1 $1
+	docker run --rm -it node:9.6.1 $1
 }
 

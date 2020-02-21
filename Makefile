@@ -16,6 +16,7 @@ dotfiles:
 		mkdir -p $(HOME)/.ssh; \
 		cp $(CURDIR)/.ssh/config $(HOME)/.ssh/; \
 	fi
+	mkdir -p $(HOME)/.npm-global
 
 .PHONY: bin
 bin:
@@ -28,5 +29,8 @@ bin:
 .PHONY: etc
 etc:
 	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf /etc/X11/xorg.conf;
-	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/60-libinput.conf /etc/X11/xorg.conf.d/60-libinput.conf
 	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/10-keyboard.conf /etc/X11/xorg.conf.d/10-keyboard.conf
+	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
+	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/90-macbook-monitor.conf /etc/X11/xorg.conf.d/90-macbook-monitor.conf
+	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/90-samsung-monitor.conf /etc/X11/xorg.conf.d/90-samsung-monitor.conf
+	sudo ln -snf $(CURDIR)/etc/asound.conf /etc/asound.conf

@@ -46,15 +46,16 @@
 *saveLines:	999999
 
 !-- Xft settings -- !
-Xft.dpi:        96
+!Xft.dpi:        192
+Xft.lcdfilter:	lcddefault
 Xft.rgba:       rgb
 Xft.autohint:   0
 Xft.hintstyle:  hintfull
 Xft.hinting:    true
 Xft.antialias:  true
 
-URxvt*font:xft:Ubuntu\ Mono:bold:pixelsize=22:antialias=true,xft:Ubuntu\ Mono\ derivative\ Powerline:bold:pixelsize=14:antialias=true
-URxvt.boldFont: xft:Ubuntu Mono:style=bold:pixelsize=22:antialias=true:hinting:full
+URxvt*font:xft:Ubuntu\ Mono:bold:pixelsize=30:antialias=true,xft:Ubuntu\ Mono\ derivative\ Powerline:bold:pixelsize=20:antialias=true
+URxvt.boldFont: xft:Ubuntu Mono:style=bold:pixelsize=30:antialias=true:hinting:full
 
 
 URxvt*scrollTtyOutput:	false
@@ -69,21 +70,4 @@ URxvt.url-launcher:         /usr/bin/xdg-open
 
 ! Clear screen
 URxvt.keysym.Control-l: command:\033c
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -1,5 +1,5 @@
 #!/bin/sh
 
-export PATH="/usr/local/go/bin:${HOME}/.local/bin:${PATH}"
-export CDPATH=.:${HOME}/applike/docker/environments/ios
+export PATH="/usr/local/go/bin:${HOME}/.local/bin:${PATH}:${HOME}/go/bin:${HOME}/.npm-global/bin"
+export CDPATH=.
 

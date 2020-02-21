@@ -50,6 +50,7 @@ base() {
 		alsa-utils \
 		apt-transport-https \
 		bc \
+		brightnessctl \
 		ca-certificates \
 		curl \
 		gcc \
@@ -64,6 +65,7 @@ base() {
 		resolvconf \
 		software-properties-common \
 		sudo \
+		tig \
 		tree \
 		unzip \
 		rxvt-unicode-256color \
@@ -93,9 +95,9 @@ install_wm() {
 		suckless-tools \
 
 	mkdir -p /etc/X11/xorg.conf.d/
-	curl -sSL https://raw.githubusercontent.com/mengelbart/dotfiles/master/etc/X11/xorg.conf.d/50-synaptics-clickpad.conf > /etc/X11/xorg.conf.d/50-synaptics-clickpad.conf
+#	curl -sSL https://raw.githubusercontent.com/mengelbart/dotfiles/master/etc/X11/xorg.conf.d/50-synaptics-clickpad.conf > /etc/X11/xorg.conf.d/50-synaptics-clickpad.conf
 
-	curl -sSL https://raw.githubusercontent.com/jessfraz/dotfiles/master/etc/fonts/local.conf > /etc/fonts/local.conf
+#	curl -sSL https://raw.githubusercontent.com/jessfraz/dotfiles/master/etc/fonts/local.conf > /etc/fonts/local.conf
 
 }
 
