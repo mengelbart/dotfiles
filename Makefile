@@ -10,6 +10,7 @@ dotfiles:
 	ln -snf $(CURDIR)/gitconfig $(HOME)/.gitconfig;
 	mkdir -p $(HOME)/.config;
 	ln -snf $(CURDIR)/.i3 $(HOME)/.config/.i3;
+	ln -snf $(CURDIR)/sway $(HOME)/.config/sway;
 	mkdir -p $(HOME)/.local/share;
 	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
 	if [ ! -e $(HOME)/.ssh ]; then \
@@ -31,6 +32,7 @@ etc:
 	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf /etc/X11/xorg.conf;
 	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/10-keyboard.conf /etc/X11/xorg.conf.d/10-keyboard.conf
 	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/40-libinput.conf /etc/X11/xorg.conf.d/40-libinput.conf
+	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/50-libinput-mouse.conf /etc/X11/xorg.conf.d/50-libinput-mouse.conf
 	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/90-macbook-monitor.conf /etc/X11/xorg.conf.d/90-macbook-monitor.conf
 	sudo ln -snf $(CURDIR)/etc/X11/xorg.conf.d/90-samsung-monitor.conf /etc/X11/xorg.conf.d/90-samsung-monitor.conf
 	sudo ln -snf $(CURDIR)/etc/asound.conf /etc/asound.conf

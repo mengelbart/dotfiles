@@ -158,7 +158,6 @@ install_go() {
 	fi
 	if [[ -d "$GO_SRC" ]]; then
 		sudo rm -rf $GO_SRC
-		sudo rm -rf $GO_PATH
 	fi
 	git clone https://go.googlesource.com/go "$GO_SRC"
 

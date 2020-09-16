@@ -33,8 +33,11 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -nb '#2D2D2D' -nf '#888888' -sb '#D64937' -sf '#DEDEDE' -l 10 -i"
+#bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -nb '#2D2D2D' -nf '#888888' -sb '#D64937' -sf '#DEDEDE' -l 10 -i"
 
+# start bemenu as a program launcher
+set $menu LD_LIBRARY_PATH=/usr/local/lib/ bemenu-run -m -1 -l 10 --scrollbar=always --fn "Noto Sans 20" | xargs swaymsg exec --
+bindsym $mod+d exec $menu
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -260,8 +263,8 @@ bindsym Pause exec playerctl play-pause
 
 # Screenshots via grim and slurp
 
-bindsym $mod+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')
-bindsym $mod+Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')
+bindsym $mod+Minus exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')
+bindsym $mod+Shift+Minus exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_grim.png')
 
 
 exec xrdb -load $HOME/.Xresources
@@ -270,7 +273,6 @@ output eDP-1 scale 2
 
 output eDP-1 pos 0 275 res 2560x1600
 output HDMI-A-2 pos 1280 0 res 1680x1050
-
 
 input 1241:8211:daskeyboard {
 	xkb_layout us,de
@@ -294,6 +296,8 @@ client.focused #2b303b #2b303b #ffffff #003d6b #2b303b
 exec mako
 exec kanshi
 
+
 # Tag xwayland windows as such
 for_window [shell="xwayland"] title_format "<span>[X] %title</span>"
 
+seat * hide_cursor 10000

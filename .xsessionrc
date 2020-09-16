@@ -17,6 +17,7 @@ fi
 xhost local:root
 
 xrandr --dpi 192
+xrandr --dpi 192 --fb 5920x2100 --output eDP-1 --pos 0x0 --mode 2560x1600 --output HDMI-2 --scale 2x2 --pos 2560x0 --panning 3360x2100+2560+0
 
 xrdb -merge ~/.Xresources
 

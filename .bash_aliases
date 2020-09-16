@@ -25,5 +25,24 @@ alias l='ls -CF'
 
 alias tf='terraform'
 alias g='git'
+alias d='docker'
 alias dc='docker-compose'
+alias v='nvim'
+alias ssh='TERM=xterm-color ssh'
+alias k='kubectl'
+
+alias less='less -Q'
+alias man='man -P "less -Q"'
+
+alias dif="kitty +kitten diff"
+
+# add completion for aliases
+_completion_loader git
+complete -o bashdefault -o default -o nospace -F _git g
+
+_completion_loader docker
+complete -o bashdefault -o default -o nospace -F _docker d
+
+
+complete -o bashdefault -o default -o nospace -F __start_kubectl k
 

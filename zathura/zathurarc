@@ -2,3 +2,5 @@
 map [normal] <Left> navigate previous
 map [normal] <Right> navigate next
 
+set selection-clipboard clipboard
+set scroll-step 300

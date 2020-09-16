@@ -46,13 +46,13 @@
 *saveLines:	999999
 
 !-- Xft settings -- !
-!Xft.dpi:        192
+Xft.dpi:        192
 Xft.lcdfilter:	lcddefault
 Xft.rgba:       rgb
 Xft.autohint:   0
 Xft.hintstyle:  hintfull
-Xft.hinting:    true
-Xft.antialias:  true
+Xft.hinting:    1
+Xft.antialias:  1
 
 URxvt*font:xft:Ubuntu\ Mono:bold:pixelsize=30:antialias=true,xft:Ubuntu\ Mono\ derivative\ Powerline:bold:pixelsize=20:antialias=true
 URxvt.boldFont: xft:Ubuntu Mono:style=bold:pixelsize=30:antialias=true:hinting:full

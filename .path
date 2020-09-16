@@ -1,5 +1,6 @@
 #!/bin/sh
 
-export PATH="/usr/local/go/bin:${HOME}/.local/bin:${PATH}:${HOME}/go/bin:${HOME}/.npm-global/bin"
-export CDPATH=.
+export PATH="/usr/sbin:/usr/local/sbin:/sbin:/snap/bin:/usr/local/go/bin:${HOME}/.local/bin:${PATH}:${HOME}/go/bin:${HOME}/.npm-global/bin"
+export CDPATH=".:${HOME}/src/gitlab.com:${HOME}/src/github.com"
 
+export PATH="$HOME/.cargo/bin:$PATH"

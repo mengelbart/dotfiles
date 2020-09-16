@@ -8,7 +8,7 @@ case "$1" in
         lock
         ;;
     logout)
-        swaymsg -t exit
+        swaymsg exit
         ;;
     suspend)
         lock && systemctl suspend

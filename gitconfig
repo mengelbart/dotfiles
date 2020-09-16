@@ -22,3 +22,5 @@
 [user]
 	name = Mathis Engelbart
 	email = mathis.engelbart@gmail.com
+[pull]
+	rebase = false

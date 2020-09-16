@@ -1,5 +1,5 @@
 {
-	output eDP-1 scale 2 mode 2560x1600 position 0,275
+	output eDP-1 scale 2 mode 2560x1600 position 0,250
 	output HDMI-A-2 mode 1680x1050 position 1280,0
 }
 {

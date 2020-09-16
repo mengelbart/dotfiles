@@ -16,3 +16,6 @@ node() {
 	docker run --rm -it node:9.6.1 $1
 }
 
+t() {
+	docker run --rm -t -v "${HOME}/.trc:/root/.trc" --log-driver none r.j3ss.co/t $@
+}
