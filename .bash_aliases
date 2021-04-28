@@ -37,8 +37,13 @@ alias man='man -P "less -Q"'
 alias dif="kitty +kitten diff"
 
 # add completion for aliases
+#
+# if something is broken, try to find the correct completion function for
+# the original (non-aliased) command with:
+# complete -p <command>
+
 _completion_loader git
-complete -o bashdefault -o default -o nospace -F _git g
+complete -o bashdefault -o default -o nospace -F __git_wrap__git_main g
 
 _completion_loader docker
 complete -o bashdefault -o default -o nospace -F _docker d
