@@ -104,17 +104,17 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: Terminal "
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
-set $workspace6 "6"
+set $workspace1 "1: www "
+set $workspace2 "2: Code "
+set $workspace3 "3: Code "
+set $workspace4 "4: Code "
+set $workspace5 "5: Code "
+set $workspace6 "6: Code "
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace10 "10"
-set $workspace11 "11"
+set $workspace10 "10: pk"
+set $workspace11 "11: Spotify "
 set $workspace12 "12"
 set $workspace13 "13"
 set $workspace14 "14"
@@ -122,10 +122,10 @@ set $workspace15 "15"
 set $workspace16 "16"
 set $workspace17 "17"
 set $workspace18 "18"
-set $workspace19 "19: Code "
-set $workspace20 "20"
-set $workspace21 "21: Spotify "
-set $workspace22 "22: Firefox "
+set $workspace19 "19: Terminal "
+set $workspace20 "20: Terminal "
+set $workspace21 "21: Terminal "
+set $workspace22 "22: www "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -178,32 +178,32 @@ bindsym $mod+Shift+F11 move container to workspace $workspace21
 bindsym $mod+Shift+F12 move container to workspace $workspace22
 
 # workspace screens
-workspace $workspace1 output eDP-1
-workspace $workspace2 output eDP-1
-workspace $workspace3 output eDP-1
-workspace $workspace4 output eDP-1
-workspace $workspace5 output eDP-1
-workspace $workspace6 output HDMI-2
-workspace $workspace7 output HDMI-2
-workspace $workspace8 output HDMI-2
-workspace $workspace9 output HDMI-2
-workspace $workspace10 output HDMI-2
+workspace $workspace1 output DP1 #eDP1
+workspace $workspace2 output DP1 #eDP1
+workspace $workspace3 output DP1 #eDP1
+workspace $workspace4 output DP1 #eDP1
+workspace $workspace5 output DP1 #eDP1
+workspace $workspace6 output eDP1 #HDMI2
+workspace $workspace7 output eDP1 #HDMI2
+workspace $workspace8 output eDP1 #HDMI2
+workspace $workspace9 output eDP1 #HDMI2
+workspace $workspace10 output eDP1 #HDMI2
 
-workspace $workspace11 output eDP-1
-workspace $workspace12 output eDP-1
-workspace $workspace13 output eDP-1
-workspace $workspace14 output eDP-1
-workspace $workspace15 output eDP-1
-workspace $workspace16 output eDP-1
-workspace $workspace17 output HDMI-2
-workspace $workspace18 output HDMI-2
-workspace $workspace19 output HDMI-2
-workspace $workspace20 output HDMI-2
-workspace $workspace21 output HDMI-2
-workspace $workspace22 output HDMI-2
+workspace $workspace11 output DP1 #eDP1
+workspace $workspace12 output DP1 #eDP1
+workspace $workspace13 output DP1 #eDP1
+workspace $workspace14 output DP1 #eDP1
+workspace $workspace15 output DP1 #eDP1
+workspace $workspace16 output DP1 #eDP1
+workspace $workspace17 output eDP1 #HDMI2
+workspace $workspace18 output eDP1 #HDMI2
+workspace $workspace19 output eDP1 #HDMI2
+workspace $workspace20 output eDP1 #HDMI2
+workspace $workspace21 output eDP1 #HDMI2
+workspace $workspace22 output eDP1 #HDMI2
 
 # workspace assignment (use "xprop")
-assign [class="^Firefox"] $workspace22
+#assign [class="^Firefox"] $workspace22
 #assign [title=" - Google Chrome$"] 3
 #assign [class="^URxvt$" instance="^welcome$"] 1
 #assign [class="^URxvt$" instance="^mail$"] 9
@@ -213,7 +213,7 @@ assign [class="^Firefox"] $workspace22
 for_window [class="^Firefox$"] border none
 for_window [class="^kitty$"] border none
 for_window [class="Spotify"] border none
-for_window [class="Spotify"] move to workspace $workspace21
+#for_window [class="Spotify"] move to workspace $workspace21
 for_window [title=" - Google Chrome$"] border none
 for_window [instance="^mosh$"] focus
 
@@ -293,17 +293,18 @@ bindsym XF86MonBrightnessDown exec sudo screen-backlight down
 bindsym XF86KbdBrightnessUp exec sudo keyboard-backlight up
 bindsym XF86KbdBrightnessDown exec sudo keyboard-backlight down
 
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym Pause exec playerctl play-pause
+bindsym XF86AudioPlay exec playerctl -p spotify play-pause
+bindsym Pause exec playerctl -p spotify play-pause
 
 # screenshots
 bindsym $mod+Shift+minus exec "maim -u -s -n -l -c 0.157,0.333,0.466,0.4 $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_maim.png')"
 
 exec xrdb -merge $HOME/.Xresources
 
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+
 # autostart
 #exec xset s 0 -dpms
 exec `$TERMINAL` -name welcome
-exec firefox
 #exec urxvt -name mail -e zsh -c "mutt"
 #exec urxvt -name mosh -e zsh -c "mosh qube -- tmux a"
