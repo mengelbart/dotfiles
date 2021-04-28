@@ -1,6 +1,12 @@
 #!/bin/sh
 
 export PATH="/usr/sbin:/usr/local/sbin:/sbin:/snap/bin:/usr/local/go/bin:${HOME}/.local/bin:${PATH}:${HOME}/go/bin:${HOME}/.npm-global/bin"
-export CDPATH=".:${HOME}/src/gitlab.com:${HOME}/src/github.com"
+export CDPATH=".:${HOME}/src/gitlab.com:${HOME}/src/github.com:${HOME}/src/git.mathis.dev"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/mathis/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/home/mathis/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/mathis/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mathis/Downloads/google-cloud-sdk/completion.bash.inc'; fi
