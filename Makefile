@@ -10,6 +10,7 @@ dotfiles:
 	ln -snf $(CURDIR)/gitconfig $(HOME)/.gitconfig;
 	mkdir -p $(HOME)/.config;
 	ln -snf $(CURDIR)/.i3 $(HOME)/.config/.i3;
+	ln -snf $(CURDIR)/dunst $(HOME)/.config/dunst;
 	ln -snf $(CURDIR)/sway $(HOME)/.config/sway;
 	mkdir -p $(HOME)/.local/share;
 	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
