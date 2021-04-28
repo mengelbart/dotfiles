@@ -23,3 +23,6 @@ node_modules
 
 # Vim backup files
 *.swp
+
+# idea directories
+.idea/

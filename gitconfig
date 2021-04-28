@@ -24,3 +24,10 @@
 	email = mathis.engelbart@gmail.com
 [pull]
 	rebase = false
+	ff = only
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = false
+[url "git@github.com:"]
+	insteadOf = https://github.com
