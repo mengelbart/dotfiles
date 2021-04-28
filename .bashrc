@@ -76,24 +76,41 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+}
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+
+source $HOME/.dotfiles/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWCOLORHINTS=true
+
+k8s_info() {
+  kubectl config view --minify --output 'jsonpath={..namespace}@{.current-context}' 2> /dev/null
+}
+
+PROMPT_COMMAND='__git_ps1 "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]" "\$(kube_ps1)\\\$ "'
+
+# Add kube-ps1: https://github.com/jonmosco/kube-ps1
+source $HOME/src/github.com/jonmosco/kube-ps1/kube-ps1.sh
+KUBE_PS1_PREFIX=" ["
+KUBE_PS1_SUFFIX="]"
+KUBE_PS1_SYMBOL_ENABLE=false
+
+# turnoff kube ps1 by default
+kubeoff
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source <(kubectl completion bash)
+
+complete -C '/usr/local/bin/aws_completer' aws
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/mathis/bin/google-cloud-sdk/path.bash.inc' ]; then . '/home/mathis/bin/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/mathis/bin/google-cloud-sdk/completion.bash.inc' ]; then . '/home/mathis/bin/google-cloud-sdk/completion.bash.inc'; fi
+source "$HOME/.cargo/env"
