@@ -1,0 +1,33 @@
+[push]
+	default = simple
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[alias]
+	st = status
+	s = status --short --branch --ignore-submodules=untracked
+	amend = commit --amend --no-edit
+	tree = log --all --decorate --graph --oneline
+	co = checkout
+
+	cm = commit
+	change = codereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
+[http]
+	cookiefile = /Users/mathis/.gitcookies
+[user]
+	name = Mathis Engelbart
+	email = mathis.engelbart@gmail.com
+[pull]
+	rebase = false
+	ff = only
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = false
+[url "git@github.com:"]
+	insteadOf = https://github.com
