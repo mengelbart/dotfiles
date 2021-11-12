@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export PATH=/usr/local/go/bin:$PATH
+export CDPATH=".:${HOME}/src/github.com"
+
+

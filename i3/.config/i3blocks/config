@@ -24,75 +24,31 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
 command=$HOME/src/github.com/vivien/i3blocks-contrib/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
-markup=none
 separator=true
+markup=none
 
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
-[mediaplayer]
-instance=spotify
-interval=2
-signal=10
+[bandwidth]
+#INTERFACE=eth0
+interval=5
 
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
-
-[bandwidth2]
-command=$HOME/src/github.com/vivien/i3blocks-contrib/bandwidth2/bandwidth2 -t 3
-interval=persist
-markup=pango
-label=
-min_width=350
-align=right
-
 [iface]
-label=
-instance=ens9
+#IFACE=wlan0
+label=IP 
 color=#00FF00
 interval=10
-separator=false
-
-[wifi]
-label=
-instance=wlp3s0
-interval=10
-separator=false
-
-[ssid]
-label=@
-command=echo "$(iw dev wlp3s0 link | grep SSID | cut -d " " -f 2-)"
-interval=60
-separator=false
-
-[iface]
-#label=
-instance=wlp3s0
-color=#00FF00
-interval=10
-separator=false
-
-# Disk usage
-#
-# The directory defaults to $HOME if the instance is not specified.
-# The script may be called with a optional argument to set the alert
-# (defaults to 10 for 10%).
-[disk]
-label=
-#instance=/mnt/data
-interval=30
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=
-separator=false
+label=MEM 
 interval=30
 
 #[memory]
@@ -101,53 +57,59 @@ interval=30
 #separator=false
 #interval=30
 
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+label=HOME 
+#DIR=/mnt/data
+interval=30
+
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-#[cpu_usage]
+#[cpu_usage2]
 #label=CPU
 #interval=10
-#min_width=CPU: 100.00%
+#min_width=CPU 100.00%
 #separator=false
 
 [load_average]
-label=
+label=LOAD 
 interval=10
-
-# Battery indicator
-#
-# The battery instance defaults to 0.
-[battery]
-label=
-#label=⚡
-#instance=1
-interval=30
 
 # Date Time
 #
 [time]
-command=date '+%a %Y-%m-%d %H:%M:%S'
+command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
-
 
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
+
 [volume]
-label=
+label=VOL
 instance=Master
-#instance=PCM
 interval=once
 signal=10
+STEP=5%
 
-# OpenVPN support
+# Generic media player support
 #
-# Support multiple VPN, with colors.
-#[openvpn]
-#interval=20
+# This displays "ARTIST - SONG" if a music is playing.
+# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
+# Set to %any to automatically pick (Requires playerctl >=2.1.1)
+#[mediaplayer]
+# This picks any player, with vlc as first, and spotify as last choice
+#instance=vlc,%any,spotify
+#interval=5
+#signal=10
 
 # Temperature
 #
@@ -158,18 +120,3 @@ signal=10
 #label=TEMP
 #interval=10
 
-# Key indicators
-#
-# Add the following bindings to i3 config file:
-#
-# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-# bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
-#[keyindicator]
-#instance=CAPS
-#interval=once
-#signal=11
-
-#[keyindicator]
-#instance=NUM
-#interval=once
-#signal=11

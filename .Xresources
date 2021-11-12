@@ -54,3 +54,20 @@ Xft.hintstyle:  hintfull
 Xft.hinting:    1
 Xft.antialias:  1
 
+URxvt*font:xft:Ubuntu\ Mono:bold:pixelsize=30:antialias=true,xft:Ubuntu\ Mono\ derivative\ Powerline:bold:pixelsize=20:antialias=true
+URxvt.boldFont: xft:Ubuntu Mono:style=bold:pixelsize=30:antialias=true:hinting:full
+
+
+URxvt*scrollTtyOutput:	false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
+*scrollBar:             false
+
+URxvt.perl-ext-common:      default,matcher,selection-to-clipboard,clipboard
+URxvt.matcher.button:       1
+URxvt.url-launcher:         /usr/bin/xdg-open
+
+
+! Clear screen
+URxvt.keysym.Control-l: command:\033c
+

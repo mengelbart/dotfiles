@@ -1,6 +1,6 @@
 # Create symlinks for dotfiles using stow
 
-MODULES := bash i3 vim git
+MODULES := bash vim git X11 i3
 
 ifeq (, $(shell which git))
 	$(error "No git in $$PATH, install it first")

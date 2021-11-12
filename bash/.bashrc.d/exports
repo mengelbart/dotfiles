@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export EDITOR=/usr/local/bin/nvim;
+export TERMINAL="kitty";
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+export HISTCONTROL=ignoreboth;
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+export HISTSIZE=50000000;
+export HISTFILESIZE=$HISTSIZE;
+
+export GO111MODULE=auto
+export GOPATH=${HOME}/go
