@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Fix decoration for java applications for tiling window managers.
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Set HiDPI settings for GTK3+.
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+
+# Set HiDPI settings for QT.
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCALE_FACTOR=2
+
+wallpaper() {
+	[ -x ~/.fehbg ] && ~/.fehbg
+}
+
+
+wallpaper
+
