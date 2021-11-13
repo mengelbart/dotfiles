@@ -307,6 +307,7 @@ exec_always --no-startup-id greenclip daemon
 bindsym ctrl+space exec dunstctl close
 
 # autostart
+exec --no-startup-id feh --bg-fill ${HOME}/Pictures/hamburg_wallpaper.jpg
 #exec xset s 0 -dpms
 #exec `$TERMINAL` -name welcome
 #exec urxvt -name mail -e zsh -c "mutt"
