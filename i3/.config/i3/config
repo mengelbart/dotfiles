@@ -46,9 +46,9 @@ set $urgent-bg-color     #E53935
 
 # window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          $bg-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
+client.focused          $bg-color           $bg-color          $text-color          $urgent-bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $urgent-bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $urgent-bg-color
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $urgent-bg-color
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -212,12 +212,12 @@ workspace $workspace22 output DP1 #HDMI2
 #assign [class="^URxvt$" instance="^mosh$"] 10
 
 # custom window settings
-for_window [class="^Firefox$"] border none
+#for_window [class="^Firefox$"] border none
 #for_window [class="^kitty$"] border none
-for_window [class="Spotify"] border none
+#for_window [class="Spotify"] border none
 #for_window [class="Spotify"] move to workspace $workspace21
-for_window [title=" - Google Chrome$"] border none
-for_window [instance="^mosh$"] focus
+#for_window [title=" - Google Chrome$"] border none
+#for_window [instance="^mosh$"] focus
 
 #default_border none
 
