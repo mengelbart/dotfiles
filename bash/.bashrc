@@ -42,3 +42,4 @@ shopt -s globstar
 
 shopt -s nocaseglob
 shopt -s cdspell
+source "$HOME/.cargo/env"

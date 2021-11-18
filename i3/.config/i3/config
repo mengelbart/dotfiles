@@ -35,6 +35,8 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec i3-dmenu-desktop --dmenu="dmenu -nb '#2D2D2D' -nf '#888888' -sb '#D64937' -sf '#DEDEDE' -l 10 -i"
 bindsym $mod+d exec rofi -show drun
 
+bindsym $mod+ctrl+d exec rofi -show window
+
 bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
 
 
@@ -221,7 +223,9 @@ workspace $workspace22 output DP1 #HDMI2
 
 #default_border none
 
-
+# move current window to scratchpad
+bindsym $mod+ctrl+minus move scratchpad
+bindsym $mod+ctrl+plus scratchpad show
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -248,6 +252,8 @@ mode "resize" {
 	bindsym Down resize grow height 10 px or 10 ppt
 	bindsym Up resize shrink height 10 px or 10 ppt
 	bindsym Right resize grow width 10 px or 10 ppt
+
+	bindsym Shift+Up resize set 1920 1080
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -298,7 +304,7 @@ bindsym XF86AudioPlay exec playerctl -p spotify play-pause
 bindsym Pause exec playerctl -p spotify play-pause
 
 # screenshots
-bindsym $mod+Shift+minus exec "maim -u -s -n -c 0.157,0.333,0.466,0.4 $(xdg-user-dir PICTURES)/$(date +'%Y-%m-%d-%H%M%S_maim.png')"
+bindsym $mod+Shift+minus exec "maim -u -s -n -c 0.157,0.333,0.466,0.4 $HOME/Pictures/$(date +'%Y-%m-%d-%H%M%S_maim.png')"
 
 exec_always --no-startup-id greenclip daemon
 

@@ -8,3 +8,15 @@ iclean() {
 	docker rmi $(docker images -q -f dangling=true)
 }
 
+backup() {
+	echo "---------------Scheduled backup time---------------"
+	echo ""
+	borg create /media/hdd/backup::$(date +%Y%m%d) /media/hdd/archive ~/src ~/Documents ~/Pictures
+	echo ""
+	echo "---------------Backup done, removing old snapshots---------------"
+	echo ""
+	borg prune -v --list --keep-daily=7 --keep-weekly=6 --keep-monthly=12 /media/hdd/backup
+	echo ""
+	echo "---------------Backup done and verified!---------------"
+}
+

@@ -15,3 +15,7 @@ Wiki](https://wiki.archlinux.org/title/User:Ctag/HiDPI#LightDM_(GTK)):
 ```
 xfg-dpi=196
 ```
+
+Create Cronjob to create automatic backups:
+
+
