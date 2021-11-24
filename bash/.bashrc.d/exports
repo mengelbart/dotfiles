@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export EDITOR=/usr/local/bin/nvim;
 export TERMINAL="kitty";
@@ -14,3 +14,4 @@ export HISTFILESIZE=$HISTSIZE;
 export GO111MODULE=auto
 export GOPATH=${HOME}/go
 
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

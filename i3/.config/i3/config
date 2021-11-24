@@ -314,6 +314,7 @@ bindsym ctrl+space exec dunstctl close
 
 # autostart
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/hamburg_wallpaper.jpg
+exec --no-startup-id pasystray
 #exec xset s 0 -dpms
 #exec `$TERMINAL` -name welcome
 #exec urxvt -name mail -e zsh -c "mutt"
