@@ -29,7 +29,7 @@ alias tf='terraform'
 alias g='git'
 alias d='docker'
 alias dc='docker-compose'
-alias v='nvim.appimage'
+alias v='nvim'
 alias k='kubectl'
 
 alias less='less -Q'
@@ -46,13 +46,16 @@ alias icat="kitty +kitten icat --align=left"
 # if something is broken, try to find the correct completion function for
 # the original (non-aliased) command with:
 # complete -p <command>
+#
+# Loading _completion_loader $cmd may be necessary
+# More info: https://superuser.com/a/1343647
 
-_completion_loader git
+if command -v _completion_loader; then
+	_completion_loader git
+	_completion_loader docker
+fi
+
 complete -o bashdefault -o default -o nospace -F __git_wrap__git_main g
-
-_completion_loader docker
 complete -o bashdefault -o default -o nospace -F _docker d
-
-
 complete -o bashdefault -o default -o nospace -F __start_kubectl k
 

@@ -10,7 +10,15 @@ if [ -x "$(command -v git)" ]; then
 	GIT_PS1_SHOWCOLORHINTS=true
 
 	# location of git prompt shell script on fedora
-	. /usr/share/git-core/contrib/completion/git-prompt.sh
+	if [ -f "/usr/share/git-core/contrib/completion/git-prompt.sh" ]; then
+		source /usr/share/git-core/contrib/completion/git-prompt.sh
+	fi
+
+	# location of git prompt shell script on mac
+	if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+		__GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+		source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+	fi
 fi
 
 PROMPT_COMMAND='__git_ps1 "\[$GREEN\]\u@\h\[$RESET\]:\[$BLUE\]\w\[$RESET\] \[$RED\]\A\[$RESET\]" "\$ "'

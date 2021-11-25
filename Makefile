@@ -17,6 +17,9 @@ all: stow
 stow:
 	stow -t ~ -d $(DOTFILESDIR) --restow $(MODULES)
 
+macbook:
+	stow -t ~ -d $(DOTFILESDIR) --restow bash vim git
+
 unstow:
 	stow -t ~ -d $(DOTFILESDIR) --delete $(MODULES)
 
