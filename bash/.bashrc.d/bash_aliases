@@ -41,6 +41,8 @@ alias dif="kitty +kitten diff"
 alias themes='kitty +kitten themes'
 alias icat="kitty +kitten icat --align=left"
 
+alias t='task'
+
 # add completion for aliases
 #
 # if something is broken, try to find the correct completion function for
@@ -53,9 +55,11 @@ alias icat="kitty +kitten icat --align=left"
 if command -v _completion_loader >/dev/null 2>&1; then
 	_completion_loader git
 	_completion_loader docker
+	_completion_loader task
 fi
 
 complete -o bashdefault -o default -o nospace -F __git_wrap__git_main g
 complete -o bashdefault -o default -o nospace -F _docker d
 complete -o bashdefault -o default -o nospace -F __start_kubectl k
+complete -o bashdefault -o default -o nospace -F _task t
 
