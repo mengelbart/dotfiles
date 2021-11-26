@@ -50,7 +50,7 @@ alias icat="kitty +kitten icat --align=left"
 # Loading _completion_loader $cmd may be necessary
 # More info: https://superuser.com/a/1343647
 
-if command -v _completion_loader; then
+if command -v _completion_loader >/dev/null 2>&1; then
 	_completion_loader git
 	_completion_loader docker
 fi
