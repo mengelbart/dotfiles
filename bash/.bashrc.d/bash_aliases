@@ -36,10 +36,12 @@ alias less='less -Q'
 alias man='man -P "less -Q"'
 
 # Kitty stuff
-alias ssh='kitty +kitten ssh'
-alias dif="kitty +kitten diff"
-alias themes='kitty +kitten themes'
-alias icat="kitty +kitten icat --align=left"
+if command -v kitty >/dev/null 2>&1; then
+	alias ssh='kitty +kitten ssh'
+	alias dif="kitty +kitten diff"
+	alias themes='kitty +kitten themes'
+	alias icat="kitty +kitten icat --align=left"
+fi
 
 alias t='task'
 
