@@ -21,19 +21,20 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 
 " Snippet completion source for nvim-cmp
 Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 
 " Other usefull completion sources
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 
+" Snippet engine
+Plug 'hrsh7th/vim-vsnip'
+Plug 'rafamadriz/friendly-snippets'
+
 " See hrsh7th's other plugins for more completion sources!
 
 " To enable more of the features of rust-analyzer, such as inlay hints and more!
 Plug 'simrat39/rust-tools.nvim'
-
-" Snippet engine
-Plug 'hrsh7th/vim-vsnip'
-Plug 'rafamadriz/friendly-snippets'
 
 " Fuzzy finder
 " Optional
@@ -51,6 +52,8 @@ call plug#end()
 
 syntax on
 filetype indent plugin on
+
+let g:tex_flavor = "latex"
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Start Lualine
@@ -109,6 +112,10 @@ lua require("clangd")
 " leader key
 let mapleader=','
 
+" Insert date
+nmap <F5> a<C-R>=strftime("%a %d %b %Y")<CR><Esc>
+imap <F5> <C-R>=strftime("%a %d %b %Y")<CR>
+
 " move lines
 map <up> ddkP
 map <down> ddjP
@@ -149,8 +156,8 @@ nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
 "autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 
 " Goto previous/next diagnostic warning/error
-nnoremap <silent> g[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next()<CR>
 
 " Snippet Key Mappings
 " Expand
@@ -172,4 +179,4 @@ smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-T
 """""""""""""""""""""""""""""""""""""""""""""""
 
 autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.go lua goimports(1000)
+autocmd BufWritePre *.go lua OrgImports(1000)

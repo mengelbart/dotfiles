@@ -1,7 +1,7 @@
 [push]
 	default = simple
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore
 [alias]
 	st = status
