@@ -108,8 +108,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "1: Terminal "
-set $workspace2 "2: Terminal "
+set $workspace1 "1"
+set $workspace2 "2"
 set $workspace3 "3"
 set $workspace4 "4"
 set $workspace5 "5"
@@ -117,19 +117,19 @@ set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace10 "10: pk"
-set $workspace11 "11: Spotify "
+set $workspace10 "10"
+set $workspace11 "11"
 set $workspace12 "12"
 set $workspace13 "13"
 set $workspace14 "14"
 set $workspace15 "15"
 set $workspace16 "16"
 set $workspace17 "17"
-set $workspace18 "18: Vim Config"
-set $workspace19 "19: Code "
-set $workspace20 "20: Code "
-set $workspace21 "21: Code "
-set $workspace22 "22: www "
+set $workspace18 "18"
+set $workspace19 "19"
+set $workspace20 "20"
+set $workspace21 "21"
+set $workspace22 "22"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
