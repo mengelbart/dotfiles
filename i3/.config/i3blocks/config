@@ -97,6 +97,10 @@ interval=300
 label=LOAD 
 interval=10
 
+[battery]
+interval=30
+markup=pango
+
 # Date Time
 #
 [time]
