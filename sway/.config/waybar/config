@@ -6,6 +6,7 @@
 
 	"modules-left": [
 		"sway/workspaces",
+		"sway/mode"
 	],
 	"modules-right": [
 		"custom/spotify",
@@ -90,5 +91,9 @@
 		"on-click": "playerctl play-pause",
 		"on-scroll-up": "playerctl next",
 		"on-scroll-down": "playerctl previous"
+	},
+	"sway/mode": {
+		"format": " {}",
+		"max-length": 100
 	}
 }
