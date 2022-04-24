@@ -11,7 +11,8 @@
 	"modules-right": [
 		"custom/spotify",
 		"pulseaudio",
-		"network",
+		"network#1",
+		"network#2",
 		"memory",
 		"disk",
 		"cpu",
@@ -44,13 +45,20 @@
 		"scroll-step": 5,
 		"on-click": "pactl set-sink-mute 0 toggle",
 	},
-	"network": {
-		"format-wifi": "{bandwidthDownBits} | {bandwidthUpBits} | {essid} ({signalStrength}%) ",
-		"format-ethernet": "{bandwidthDownBits} | {bandwidthUpBits} | {ipaddr}/{cidr} ",
+	"network#1": {
+		"interface": "w*",
+		"interval": 5,
+		"format-wifi": " {bandwidthDownBits}|{bandwidthUpBits}|{ipaddr}/{cidr}@{essid} ({signalStrength}%)",
 		"format-disconnected": "", //An empty format will hide the module.
-		"tooltip-format": "{ifname} via {gwaddr} ",
-		"tooltip-format-ethernet": "{ifname} ",
-		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format": "{ifname} via {gwaddr} ",
+		"tooltip-format-disconnected": "Disconnected"
+	},
+	"network#2": {
+		"interface": "e*",
+		"interval": 5,
+		"format-ethernet": "🖧 {bandwidthDownBits}|{bandwidthUpBits}|{ipaddr}/{cidr}",
+		"format-disconnected": "", //An empty format will hide the module.
+		"tooltip-format": "{ifname} via {gwaddr} 🖧",
 		"tooltip-format-disconnected": "Disconnected"
 	},
 	"memory": {

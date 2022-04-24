@@ -8,16 +8,6 @@ window#waybar {
 	color: #fdf6e3;
 }
 
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-	color: #1a1a1a;
-}
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
-}
-
 #workspaces button {
 	padding: 0 2px;
 	color: #fdf6e3;
@@ -39,8 +29,11 @@ window#waybar {
 #custom-spotify{
 	color: cyan;
 }
-#network{
+#network.1{
 	color: green;
+}
+#network.2{
+	color: red;
 }
 #pulseaudio {
 	color: #268bd2;
