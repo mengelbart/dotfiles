@@ -10,6 +10,8 @@ else
     alias ls='ls -G'
 fi
 
+alias note='nvim $(create_note)'
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'

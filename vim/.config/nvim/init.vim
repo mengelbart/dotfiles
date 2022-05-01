@@ -116,6 +116,10 @@ let mapleader=','
 nmap <F5> a<C-R>=strftime("%a %d %b %Y")<CR><Esc>
 imap <F5> <C-R>=strftime("%a %d %b %Y")<CR>
 
+" Insert Date in ID format
+nmap <F6> a<C-R>=strftime("%Y%m%d%H%M")<CR><Esc>
+imap <F6> <C-R>=strftime("%Y%m%d%H%M")<CR>
+
 " move lines
 map <up> ddkP
 map <down> ddjP

@@ -20,3 +20,19 @@ backup() {
 	echo "---------------Backup done and verified!---------------"
 }
 
+create_note() {
+	ID=$(date +"%Y%m%d%H%M")
+	DATE=$(date +"%a %d %b %Y")
+	FILE=$ID.md
+	touch $FILE
+	cat << EOF > $FILE
+---
+title: <title>
+date: $DATE
+id: $ID
+author: Mathis Engelbart
+keywords: []
+---
+EOF
+	echo $FILE
+}
