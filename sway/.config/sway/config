@@ -193,12 +193,12 @@ workspace $workspace13 output $lg eDP-1
 workspace $workspace14 output $lg eDP-1
 workspace $workspace15 output $lg eDP-1
 workspace $workspace16 output $lg eDP-1
-workspace $workspace17 output $fujitsu eDP-1 
-workspace $workspace18 output $fujitsu eDP-1 
-workspace $workspace19 output $fujitsu eDP-1 
-workspace $workspace20 output $fujitsu eDP-1 
-workspace $workspace21 output $fujitsu eDP-1 
-workspace $workspace22 output $fujitsu eDP-1 
+workspace $workspace17 output $fujitsu eDP-1
+workspace $workspace18 output $fujitsu eDP-1
+workspace $workspace19 output $fujitsu eDP-1
+workspace $workspace20 output $fujitsu eDP-1
+workspace $workspace21 output $fujitsu eDP-1
+workspace $workspace22 output $fujitsu eDP-1
 
 # move current window to scratchpad
 bindsym $mod+ctrl+minus move scratchpad
