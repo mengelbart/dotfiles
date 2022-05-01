@@ -75,14 +75,15 @@
 			"warning": 30,
 			"critical": 20
 		},
-		"format": "{icon} {capacity}%",
+		"format": "{icon} {capacity}% {time}",
 		"format-icons": [
 			"",
 			"",
 			"",
 			"",
 			""
-		]
+		],
+		"format-charging": " {icon} {capacity}% {time}"
 	},
 	"disk": {
 		"interval": 30,

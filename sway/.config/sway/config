@@ -11,6 +11,8 @@
 
 set $mod Mod4
 
+set $fujitsu "Fujitsu Siemens Computers GmbH P27-8 TS Pro YVAQ216954"
+set $lg "Goldstar Company Ltd LG HDR 4K 0x00003E46"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -174,29 +176,29 @@ bindsym $mod+Shift+F11 move container to workspace $workspace21
 bindsym $mod+Shift+F12 move container to workspace $workspace22
 
 # workspace screens
-workspace $workspace1 output HDMI-A-1 eDP-1
-workspace $workspace2 output HDMI-A-1 eDP-1
-workspace $workspace3 output HDMI-A-1 eDP-1
-workspace $workspace4 output HDMI-A-1 eDP-1
-workspace $workspace5 output HDMI-A-1 eDP-1
-workspace $workspace6 output eDP-1 HDMI-A-1
-workspace $workspace7 output eDP-1 HDMI-A-1
-workspace $workspace8 output eDP-1 HDMI-A-1
-workspace $workspace9 output eDP-1 HDMI-A-1
-workspace $workspace10 output eDP-1 HDMI-A-1
+workspace $workspace1 output $lg eDP-1
+workspace $workspace2 output $lg eDP-1
+workspace $workspace3 output $lg eDP-1
+workspace $workspace4 output $lg eDP-1
+workspace $workspace5 output $lg eDP-1
+workspace $workspace6 output $fujitsu eDP-1
+workspace $workspace7 output $fujitsu eDP-1
+workspace $workspace8 output $fujitsu eDP-1
+workspace $workspace9 output $fujitsu eDP-1
+workspace $workspace10 output $fujitsu eDP-1
 
-workspace $workspace11 output HDMI-A-1 eDP-1
-workspace $workspace12 output HDMI-A-1 eDP-1
-workspace $workspace13 output HDMI-A-1 eDP-1
-workspace $workspace14 output HDMI-A-1 eDP-1
-workspace $workspace15 output HDMI-A-1 eDP-1
-workspace $workspace16 output HDMI-A-1 eDP-1
-workspace $workspace17 output eDP-1 HDMI-A-1
-workspace $workspace18 output eDP-1 HDMI-A-1
-workspace $workspace19 output eDP-1 HDMI-A-1
-workspace $workspace20 output eDP-1 HDMI-A-1
-workspace $workspace21 output eDP-1 HDMI-A-1
-workspace $workspace22 output eDP-1 HDMI-A-1
+workspace $workspace11 output $lg eDP-1
+workspace $workspace12 output $lg eDP-1
+workspace $workspace13 output $lg eDP-1
+workspace $workspace14 output $lg eDP-1
+workspace $workspace15 output $lg eDP-1
+workspace $workspace16 output $lg eDP-1
+workspace $workspace17 output $fujitsu eDP-1 
+workspace $workspace18 output $fujitsu eDP-1 
+workspace $workspace19 output $fujitsu eDP-1 
+workspace $workspace20 output $fujitsu eDP-1 
+workspace $workspace21 output $fujitsu eDP-1 
+workspace $workspace22 output $fujitsu eDP-1 
 
 # move current window to scratchpad
 bindsym $mod+ctrl+minus move scratchpad
@@ -274,10 +276,19 @@ bindsym ctrl+space exec makoctl dismiss
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/hamburg_wallpaper.jpg
 exec --no-startup-id pasystray
 
-output HDMI-A-1 scale 2
+
+output $lg scale 2
+output $fujitsu scale 1
+
 output "*" bg /home/mathis/Pictures/hamburg_wallpaper.jpg fill
 
 input "1241:8211:daskeyboard" {
+	xkb_layout "us,de"
+	xkb_options "grp:alt_space_toggle"
+	xkb_model "pc105"
+}
+
+input "16700:8455:Dell_Dell_USB_Entry_Keyboard" {
 	xkb_layout "us,de"
 	xkb_options "grp:alt_space_toggle"
 	xkb_model "pc105"
