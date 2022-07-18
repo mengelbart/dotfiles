@@ -183,29 +183,29 @@ bindsym $mod+Shift+F11 move container to workspace $workspace21
 bindsym $mod+Shift+F12 move container to workspace $workspace22
 
 # workspace screens
-workspace $workspace1 output eDP1
-workspace $workspace2 output eDP1
-workspace $workspace3 output eDP1
-workspace $workspace4 output eDP1
-workspace $workspace5 output eDP1
-workspace $workspace6 output DP1 #HDMI2
-workspace $workspace7 output DP1 #HDMI2
-workspace $workspace8 output DP1 #HDMI2
-workspace $workspace9 output DP1 #HDMI2
-workspace $workspace10 output DP1 #HDMI2
+workspace $workspace1 output HDMI-1
+workspace $workspace2 output HDMI-1
+workspace $workspace3 output HDMI-1
+workspace $workspace4 output HDMI-1
+workspace $workspace5 output HDMI-1
+workspace $workspace6 output HDMI-1
+workspace $workspace7 output HDMI-1
+workspace $workspace8 output HDMI-1
+workspace $workspace9 output HDMI-1
+workspace $workspace10 output HDMI-1
 
-workspace $workspace11 output eDP1
-workspace $workspace12 output eDP1
-workspace $workspace13 output eDP1
-workspace $workspace14 output eDP1
-workspace $workspace15 output eDP1
-workspace $workspace16 output eDP1
-workspace $workspace17 output DP1 #HDMI2
-workspace $workspace18 output DP1 #HDMI2
-workspace $workspace19 output DP1 #HDMI2
-workspace $workspace20 output DP1 #HDMI2
-workspace $workspace21 output DP1 #HDMI2
-workspace $workspace22 output DP1 #HDMI2
+workspace $workspace11 output eDP-1
+workspace $workspace12 output eDP-1
+workspace $workspace13 output eDP-1
+workspace $workspace14 output eDP-1
+workspace $workspace15 output eDP-1
+workspace $workspace16 output eDP-1
+workspace $workspace17 output eDP-1
+workspace $workspace18 output eDP-1
+workspace $workspace19 output eDP-1
+workspace $workspace20 output eDP-1
+workspace $workspace21 output eDP-1
+workspace $workspace22 output eDP-1
 
 # workspace assignment (use "xprop")
 #assign [class="^Firefox"] $workspace22
