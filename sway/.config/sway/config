@@ -93,6 +93,9 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
+# keep floating window stick to all workspaces
+bindsym $mod+Shift+s sticky toggle
+
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
@@ -176,29 +179,29 @@ bindsym $mod+Shift+F11 move container to workspace $workspace21
 bindsym $mod+Shift+F12 move container to workspace $workspace22
 
 # workspace screens
-workspace $workspace1 output $lg eDP-1
-workspace $workspace2 output $lg eDP-1
-workspace $workspace3 output $lg eDP-1
-workspace $workspace4 output $lg eDP-1
-workspace $workspace5 output $lg eDP-1
-workspace $workspace6 output $fujitsu eDP-1
-workspace $workspace7 output $fujitsu eDP-1
-workspace $workspace8 output $fujitsu eDP-1
-workspace $workspace9 output $fujitsu eDP-1
-workspace $workspace10 output $fujitsu eDP-1
+workspace $workspace1 output $lg $fujitsu eDP-1
+workspace $workspace2 output $lg $fujitsu eDP-1
+workspace $workspace3 output $lg $fujitsu eDP-1
+workspace $workspace4 output $lg $fujitsu eDP-1
+workspace $workspace5 output $lg $fujitsu eDP-1
+workspace $workspace6 output $lg $fujitsu eDP-1
+workspace $workspace7 output $lg $fujitsu eDP-1
+workspace $workspace8 output $lg $fujitsu eDP-1
+workspace $workspace9 output $lg $fujitsu eDP-1
+workspace $workspace10 output $lg $fujitsu eDP-1
 
-workspace $workspace11 output $lg eDP-1
-workspace $workspace12 output $lg eDP-1
-workspace $workspace13 output $lg eDP-1
-workspace $workspace14 output $lg eDP-1
-workspace $workspace15 output $lg eDP-1
-workspace $workspace16 output $lg eDP-1
-workspace $workspace17 output $fujitsu eDP-1
-workspace $workspace18 output $fujitsu eDP-1
-workspace $workspace19 output $fujitsu eDP-1
-workspace $workspace20 output $fujitsu eDP-1
-workspace $workspace21 output $fujitsu eDP-1
-workspace $workspace22 output $fujitsu eDP-1
+workspace $workspace11 output eDP-1 $lg $fujitsu
+workspace $workspace12 output eDP-1 $lg $fujitsu
+workspace $workspace13 output eDP-1 $lg $fujitsu
+workspace $workspace14 output eDP-1 $lg $fujitsu
+workspace $workspace15 output eDP-1 $lg $fujitsu
+workspace $workspace16 output eDP-1 $lg $fujitsu
+workspace $workspace17 output eDP-1 $lg $fujitsu
+workspace $workspace18 output eDP-1 $lg $fujitsu
+workspace $workspace19 output eDP-1 $lg $fujitsu
+workspace $workspace20 output eDP-1 $lg $fujitsu
+workspace $workspace21 output eDP-1 $lg $fujitsu
+workspace $workspace22 output eDP-1 $lg $fujitsu
 
 # move current window to scratchpad
 bindsym $mod+ctrl+minus move scratchpad
@@ -289,6 +292,12 @@ input "1241:8211:daskeyboard" {
 }
 
 input "16700:8455:Dell_Dell_USB_Entry_Keyboard" {
+	xkb_layout "us,de"
+	xkb_options "grp:alt_space_toggle"
+	xkb_model "pc105"
+}
+
+input "1:1:AT_Translated_Set_2_keyboard" {
 	xkb_layout "us,de"
 	xkb_options "grp:alt_space_toggle"
 	xkb_model "pc105"
