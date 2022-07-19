@@ -295,14 +295,16 @@ mode "$mode_system" {
 }
 bindsym $mod+Shift+p mode "$mode_system"
 
-bindsym XF86MonBrightnessUp exec sudo screen-backlight up
-bindsym XF86MonBrightnessDown exec sudo screen-backlight down
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 0 toggle
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioPlay exec --no-startup-id playerctl -p spotify play-pause
+bindsym Pause exec --no-startup-id playerctl -p spotify play-pause
 
 bindsym XF86KbdBrightnessUp exec sudo keyboard-backlight up
 bindsym XF86KbdBrightnessDown exec sudo keyboard-backlight down
-
-bindsym XF86AudioPlay exec playerctl -p spotify play-pause
-bindsym Pause exec playerctl -p spotify play-pause
 
 # screenshots
 bindsym $mod+Shift+minus exec "maim -u -s -n -c 0.157,0.333,0.466,0.4 $HOME/Pictures/$(date +'%Y-%m-%d-%H%M%S_maim.png')"
