@@ -311,7 +311,7 @@ bindsym $mod+Shift+minus exec "maim -u -s -n -c 0.157,0.333,0.466,0.4 $HOME/Pict
 
 exec_always --no-startup-id greenclip daemon
 
-#exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 bindsym ctrl+space exec dunstctl close
 
