@@ -271,11 +271,12 @@ bindsym Pause exec --no-startup-id playerctl -p spotify play-pause
 # screenshots
 bindsym $mod+Shift+minus exec grim -g "$(slurp)"
 
-exec_always --no-startup-id greenclip daemon
 
 bindsym ctrl+space exec makoctl dismiss
 
 # autostart
+exec_always --no-startup-id greenclip daemon
+exec --no-startup-id ~/bin/battery-notify.sh
 exec --no-startup-id pasystray
 
 output $lg scale 2
