@@ -1,6 +1,6 @@
 # Create symlinks for dotfiles using stow
 
-MODULES := bash vim git X11 i3 kitty zathura systemd
+MODULES := bash bin vim git X11 i3 kitty zathura systemd
 MAC_MODULES := bash vim git
 SWAY_MODULES := sway
 
@@ -19,7 +19,7 @@ DOTFILESDIR := $(shell dirname "$(readlink -f "$0")")
 all: stow
 
 stow:
-	stow -t ~ -d $(DOTFILESDIR) --restow $(MODULES)
+	stow -v -t ~ -d $(DOTFILESDIR) --restow $(MODULES)
 
 sway:
 	stow -t ~ -d $(DOTFILESDIR) --restow $(SWAY_MODULES)
