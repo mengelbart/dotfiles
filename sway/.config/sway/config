@@ -276,9 +276,7 @@ exec_always --no-startup-id greenclip daemon
 bindsym ctrl+space exec makoctl dismiss
 
 # autostart
-exec --no-startup-id feh --bg-fill ${HOME}/Pictures/hamburg_wallpaper.jpg
 exec --no-startup-id pasystray
-
 
 output $lg scale 2
 output $fujitsu scale 1
