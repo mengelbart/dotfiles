@@ -11,7 +11,7 @@ iclean() {
 backup() {
 	echo "---------------Scheduled backup time---------------"
 	echo ""
-	borg create /media/hdd/backup::$(date +%Y%m%d) /media/hdd/archive ~/src ~/Documents ~/Pictures ~/docs
+	borg create /media/hdd/backup::$(date +%Y%m%d) /media/hdd/archive ~/src ~/Documents ~/Pictures
 	echo ""
 	echo "---------------Backup done, removing old snapshots---------------"
 	echo ""
@@ -20,14 +20,22 @@ backup() {
 	echo "---------------Backup done and verified!---------------"
 }
 
-create_note() {
+note() {
 	ID=$(date +"%Y%m%d%H%M")
 	DATE=$(date +"%a %d %b %Y")
 	FILE=$ID.md
+	if [ -z ${1+x} ];
+	then
+		echo "var is unset";
+	else
+		echo "var is set to '$1'";
+		mkdir -p $1
+		FILE=$1/$FILE
+	fi
 	touch $FILE
 	cat << EOF > $FILE
 ---
-title: <title>
+title: Notes
 date: $DATE
 id: $ID
 author: Mathis Engelbart
