@@ -32,8 +32,8 @@ alias dc='docker-compose'
 alias v='nvim'
 alias k='kubectl'
 
-alias less='less -Q'
-alias man='man -P "less -Q"'
+# alias less='less -Q'
+# alias man='man -P "less -Q"'
 
 # Kitty stuff
 if command -v kitty >/dev/null 2>&1; then
