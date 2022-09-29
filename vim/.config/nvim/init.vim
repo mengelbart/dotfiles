@@ -44,6 +44,9 @@ Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+" Formatting
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""
