@@ -1,7 +1,7 @@
 # Create symlinks for dotfiles using stow
 
 MODULES := bash bin vim git X11 i3 kitty zathura systemd
-MAC_MODULES := bash vim git
+MAC_MODULES := bash vim git kitty
 SWAY_MODULES := sway
 
 ifeq (, $(shell which git))
