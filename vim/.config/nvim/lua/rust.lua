@@ -8,7 +8,6 @@ local nvim_lsp = require'lspconfig'
 local opts = {
     tools = {
         autoSetHints = true,
-        hover_with_actions = true,
         runnables = {
             use_telescope = true
         },
