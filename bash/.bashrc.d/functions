@@ -11,7 +11,13 @@ iclean() {
 backup() {
 	echo "---------------Scheduled backup time---------------"
 	echo ""
-	borg create /media/hdd/backup::$(date +%Y%m%d) /media/hdd/archive ~/src ~/Documents ~/Pictures
+	borg create /media/hdd/backup::$(date +%Y%m%d) \
+		/media/hdd/archive \
+		~/src \
+		~/Documents \
+		~/Pictures \
+		~/Zotero \
+		~/.var/app/net.ankiweb.Anki/data/Anki2
 	echo ""
 	echo "---------------Backup done, removing old snapshots---------------"
 	echo ""
