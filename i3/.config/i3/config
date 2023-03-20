@@ -11,6 +11,8 @@
 
 set $mod Mod4
 
+set $dp1 "DisplayPort-1"
+set $dp2 "DisplayPort-2"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -183,29 +185,31 @@ bindsym $mod+Shift+F11 move container to workspace $workspace21
 bindsym $mod+Shift+F12 move container to workspace $workspace22
 
 # workspace screens
-workspace $workspace1 output HDMI-1
-workspace $workspace2 output HDMI-1
-workspace $workspace3 output HDMI-1
-workspace $workspace4 output HDMI-1
-workspace $workspace5 output HDMI-1
-workspace $workspace6 output HDMI-1
-workspace $workspace7 output HDMI-1
-workspace $workspace8 output HDMI-1
-workspace $workspace9 output HDMI-1
-workspace $workspace10 output HDMI-1
+workspace $workspace1 output $dp2
+workspace $workspace2 output $dp2
+workspace $workspace3 output $dp2
+workspace $workspace4 output $dp2
+workspace $workspace5 output $dp2
 
-workspace $workspace11 output eDP-1
-workspace $workspace12 output eDP-1
-workspace $workspace13 output eDP-1
-workspace $workspace14 output eDP-1
-workspace $workspace15 output eDP-1
-workspace $workspace16 output eDP-1
-workspace $workspace17 output eDP-1
-workspace $workspace18 output eDP-1
-workspace $workspace19 output eDP-1
-workspace $workspace20 output eDP-1
-workspace $workspace21 output eDP-1
-workspace $workspace22 output eDP-1
+workspace $workspace6 output $dp1
+workspace $workspace7 output $dp1
+workspace $workspace8 output $dp1
+workspace $workspace9 output $dp1
+workspace $workspace10 output $dp1
+
+workspace $workspace11 output $dp2
+workspace $workspace12 output $dp2
+workspace $workspace13 output $dp2
+workspace $workspace14 output $dp2
+workspace $workspace15 output $dp2
+workspace $workspace16 output $dp2
+
+workspace $workspace17 output $dp1
+workspace $workspace18 output $dp1
+workspace $workspace19 output $dp1
+workspace $workspace20 output $dp1
+workspace $workspace21 output $dp1
+workspace $workspace22 output $dp1
 
 # workspace assignment (use "xprop")
 #assign [class="^Firefox"] $workspace22
