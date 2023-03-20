@@ -311,7 +311,8 @@ bindsym XF86KbdBrightnessUp exec sudo keyboard-backlight up
 bindsym XF86KbdBrightnessDown exec sudo keyboard-backlight down
 
 # screenshots
-bindsym $mod+Shift+minus exec "maim -u -s -n -c 0.157,0.333,0.466,0.4 $HOME/Pictures/$(date +'%Y-%m-%d-%H%M%S_maim.png')"
+#bindsym $mod+Shift+minus exec "maim -u -s -n -c 0.157,0.333,0.466,0.4 $HOME/Pictures/$(date +'%Y-%m-%d-%H%M%S_maim.png')"
+bindsym $mod+Shift+minus exec --no-startup-id maim --select "/home/$USER/Pictures/$(date +'%Y-%m-%d-%H%M%S'_maim).png"
 
 exec_always --no-startup-id greenclip daemon
 
