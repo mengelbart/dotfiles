@@ -2,6 +2,6 @@
 
 export PATH=~/.npm-global/bin:$PATH
 export PATH=${HOME}/src/chromium.googlesource.com/tools/depot_tools:${HOME}/go/bin:/usr/local/go/bin:$PATH
-export CDPATH=".:${HOME}/src/github.com"
+export CDPATH=".:${HOME}/src/github.com:${HOME}/src/gitlab.lrz.de"
 
 
