@@ -3,7 +3,7 @@
 RESET=$'\e[0m'
 RED=$'\e[31;49m'
 GREEN=$'\e[32;49m'
-BLUE=$'\e[34:49m'
+BLUE=$'\e[34;49m'
 
 if [ -x "$(command -v git)" ]; then
 	GIT_PS1_SHOWDIRTYSTATE=true
