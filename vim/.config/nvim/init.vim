@@ -92,6 +92,7 @@ set ignorecase
 set smartcase
 set hidden
 set nobackup
+set cursorline
 
 set signcolumn=yes
 
