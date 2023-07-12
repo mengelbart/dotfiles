@@ -2,13 +2,13 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Statusline
 Plug 'hoob3rt/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 
 " Vinegar ('-' to browse files etc.)
 Plug 'tpope/vim-vinegar'
 
 " Color schemes
-Plug 'flazz/vim-colorschemes'
+Plug 'loctvl842/monokai-pro.nvim'
 
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
@@ -18,6 +18,7 @@ Plug 'hrsh7th/nvim-cmp'
 
 " LSP completion source for nvim-cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 
 " Snippet completion source for nvim-cmp
 Plug 'hrsh7th/cmp-vsnip'
@@ -26,6 +27,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 " Other usefull completion sources
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-nvim-lua'
 
 " Snippet engine
 Plug 'hrsh7th/vim-vsnip'
@@ -53,6 +55,8 @@ call plug#end()
 " Syntax and Completion
 """""""""""""""""""""""""""""""""""""""""""""""
 
+lua require("completion")
+
 syntax on
 filetype indent plugin on
 
@@ -62,7 +66,7 @@ let g:tex_flavor = "latex"
 " Start Lualine
 """""""""""""""""""""""""""""""""""""""""""""""
 
-lua require('lualine').setup()
+lua require("statusline")
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Look
@@ -72,7 +76,7 @@ lua require('lualine').setup()
 set scrolloff=999
 
 " Color scheme
-color 256-jungle
+colorscheme monokai-pro
 
 " set relativenumber function mapped on ctrl-n (see section Key mappings)
 function! NumberToggle()
@@ -156,7 +160,7 @@ nnoremap <leader>c :nohl<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fh <cmd>Telescope plantes<cr>
 
 " Code navigation shortcuts
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
