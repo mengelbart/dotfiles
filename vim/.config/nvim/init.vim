@@ -113,6 +113,7 @@ lua require("go")
 lua require("treesitter")
 lua require("clangd")
 lua require("python")
+lua require("haskell")
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
