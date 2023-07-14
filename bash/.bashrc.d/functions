@@ -41,7 +41,7 @@ note() {
 	touch $FILE
 	cat << EOF > $FILE
 ---
-title: Notes
+title: $DATE Notes
 date: $DATE
 id: $ID
 author: Mathis Engelbart
