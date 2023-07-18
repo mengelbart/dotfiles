@@ -1,5 +1,8 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+" git support
+Plug 'tpope/vim-fugitive'
+
 " Statusline
 Plug 'hoob3rt/lualine.nvim'
 Plug 'nvim-tree/nvim-web-devicons'
