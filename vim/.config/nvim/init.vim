@@ -41,6 +41,9 @@ Plug 'rafamadriz/friendly-snippets'
 " To enable more of the features of rust-analyzer, such as inlay hints and more!
 Plug 'simrat39/rust-tools.nvim'
 
+" haskell
+Plug 'mrcjkb/haskell-tools.nvim'
+
 " Fuzzy finder
 " Optional
 Plug 'nvim-lua/popup.nvim'
@@ -106,17 +109,6 @@ set signcolumn=yes
 " Set updatetime for CursorHold
 " 300ms of no cursor movement to trigger CursorHold
 set updatetime=300
-
-"""""""""""""""""""""""""""""""""""""""""""""""
-" Import lua configs
-"""""""""""""""""""""""""""""""""""""""""""""""
-
-lua require("rust")
-lua require("go")
-lua require("treesitter")
-lua require("clangd")
-lua require("python")
-lua require("haskell")
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
@@ -212,3 +204,14 @@ autocmd BufWritePre *.cpp lua vim.lsp.buf.format()
 autocmd BufWritePre *.h lua vim.lsp.buf.format()
 autocmd BufWritePre *.rs lua vim.lsp.buf.format()
 autocmd BufWritePre *.go lua go_org_imports(1000)
+
+"""""""""""""""""""""""""""""""""""""""""""""""
+" Import lua configs
+"""""""""""""""""""""""""""""""""""""""""""""""
+
+lua require("rust")
+lua require("go")
+lua require("treesitter")
+lua require("clangd")
+lua require("python")
+lua require("haskell")
