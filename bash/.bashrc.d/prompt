@@ -21,5 +21,5 @@ if [ -x "$(command -v git)" ]; then
 	fi
 fi
 
-PROMPT_COMMAND='__git_ps1 "\[$GREEN\]\u@\h\[$RESET\]:\[$BLUE\]\w\[$RESET\] \[$RED\]\A\[$RESET\]" "\$ "'
+PROMPT_COMMAND='__git_ps1 "\[$GREEN\]\u@\h\[$RESET\]:\[$BLUE\]\W\[$RESET\] \[$RED\]\A\[$RESET\]" "\$ "'
 
