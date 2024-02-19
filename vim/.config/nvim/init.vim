@@ -39,7 +39,8 @@ Plug 'rafamadriz/friendly-snippets'
 " See hrsh7th's other plugins for more completion sources!
 
 " To enable more of the features of rust-analyzer, such as inlay hints and more!
-Plug 'simrat39/rust-tools.nvim'
+" Plug 'rust-lang/rust.vim'
+Plug 'mrcjkb/rustaceanvim'
 
 " haskell
 Plug 'mrcjkb/haskell-tools.nvim'
@@ -209,7 +210,6 @@ autocmd BufWritePre *.go lua go_org_imports(1000)
 " Import lua configs
 """""""""""""""""""""""""""""""""""""""""""""""
 
-lua require("rust")
 lua require("go")
 lua require("treesitter")
 lua require("clangd")
