@@ -12,7 +12,7 @@
 set $mod Mod4
 
 set $fujitsu "Fujitsu Siemens Computers GmbH P27-8 TS Pro YVAQ216954"
-set $lg "Goldstar Company Ltd LG HDR 4K 0x00003E46"
+set $lg "LG Electronics LG HDR 4K 0x00003E46"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
