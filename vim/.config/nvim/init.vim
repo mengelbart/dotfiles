@@ -157,7 +157,7 @@ nnoremap <leader>c :nohl<CR>
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope plantes<cr>
+nnoremap <leader>fh <cmd>Telescope planets<cr>
 
 " Code navigation shortcuts
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>

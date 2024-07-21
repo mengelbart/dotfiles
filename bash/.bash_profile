@@ -6,3 +6,5 @@ if [ -f ~/.bashrc ]; then
 fi
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+[[ -f ~/.bashrc ]] && source ~/.bashrc # ghcup-env

@@ -76,4 +76,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-[ -f "/home/mathis/.ghcup/env" ] && source "/home/mathis/.ghcup/env" # ghcup-env
+[ -f "/Users/mathis/.ghcup/env" ] && source "/Users/mathis/.ghcup/env" # ghcup-env
+
