@@ -29,87 +29,31 @@ check_sudo() {
 	fi
 }
 
-setup_sources() {
-	cat <<-EOF > /etc/apt/sources.list
-	deb http://ftp.de.debian.org/debian/ buster main contrib non-free
-	deb-src http://ftp.de.debian.org/debian/ buster main contrib non-free
-	
-	deb http://security.debian.org/debian-security buster/updates main contrib non-free
-	deb-src http://security.debian.org/debian-security buster/updates main contrib non-free
-	
-	# buster-updates, previously known as 'volatile'
-	deb http://ftp.de.debian.org/debian/ buster-updates main contrib non-free
-	deb-src http://ftp.de.debian.org/debian/ buster-updates main contrib non-free
-	EOF
-}
-
-base() {
-	apt update
-	apt -y upgrade
-	apt install -y --no-install-recommends \
-		alsa-utils \
-		apt-transport-https \
-		bc \
-		brightnessctl \
-		ca-certificates \
-		curl \
-		gcc \
-		git \
-		gnupg2 \
-		htop \
-		libncurses5-dev \
-		libssl-dev \
-		jq \
-		make \
-		network-manager \
-		resolvconf \
-		software-properties-common \
-		sudo \
-		tig \
-		tree \
-		unzip \
-		rxvt-unicode-256color \
-		vim-nox
-
-	apt autoremove
-	apt autoclean
-	apt clean
-}
-
-
-install_graphics() {
-	apt install -y --no-install-recommends \
-		xcompmgr \
-		xorg \
-		xserver-xorg \
-		xserver-xorg-video-nouveau
-}
-
 install_wm() {
-
-	apt install -y --no-install-recommends \
+	dnf install -y \
+		@base-x \
 		feh \
 		i3 \
 		i3lock \
 		i3status \
-		suckless-tools \
-
-	mkdir -p /etc/X11/xorg.conf.d/
-#	curl -sSL https://raw.githubusercontent.com/mengelbart/dotfiles/master/etc/X11/xorg.conf.d/50-synaptics-clickpad.conf > /etc/X11/xorg.conf.d/50-synaptics-clickpad.conf
-
-#	curl -sSL https://raw.githubusercontent.com/jessfraz/dotfiles/master/etc/fonts/local.conf > /etc/fonts/local.conf
-
-}
-
-install_wifi() {
-	apt install -y --no-install-recommends \
-		firmware-brcm80211
-	modprobe -r brcmsmac ; modprobe brcmsmac
+		dmenu \
+		dunst \
+		lightdm \
+		kitty \
+		nmcli \
+		light \
+		htop \
+		thunar \
+		rofi \
+		powertop \
+		arandr \
+		fontawesome-fonts-all
 }
 
 install_dotfiles() {
 	(
-	git clone git@github.com:mengelbart/dotfiles.git "${HOME}/dotfiles"
+	mkdir -p "${HOME}/src/github.com/mengelbart"
+	git clone git@github.com:mengelbart/dotfiles.git "${HOME}/src/github.com/mengelbart/dotfiles"
 	cd "${HOME}/dotfiles"
 
 	make
@@ -118,34 +62,6 @@ install_dotfiles() {
 	)
 
 	install_vim;
-}
-
-install_vim() {
-	(
-	rm -rf "${HOME}/.vim"
-	git clone --recursive git@github.com:mengelbart/.vim.git "${HOME}/.vim"
-	cd "${HOME}/.vim"
-	make install
-	)
-}
-
-install_docker() {
-	apt update
-
-	curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-	add-apt-repository \
-		"deb [arch=amd64] https://download.docker.com/linux/debian \
-		$(lsb_release -cs) \
-		stable"
-
-	apt update
-	apt install -y \
-		docker-ce
-
-	#groupadd docker
-	usermod -aG docker "$TARGET_USER"
-
-	systemctl enable docker
 }
 
 install_go() {
@@ -178,41 +94,16 @@ install_go() {
 
 }
 
-aws_cli() {
-	sudo apt-get update
-	sudo apt-get install -y --no-install-recommends python-pip
-
-	pip install setuptools
-	pip install awscli --upgrade --user
-}
-
 main() {
 	local cmd=$1
 	
-	if [[ $cmd == "base" ]]; then
-		check_sudo
-		setup_sources
-		base
-	elif [[ $cmd == "graphics" ]]; then
-		check_sudo
-		install_graphics
-	elif [[ $cmd == "wm" ]]; then
+	if [[ $cmd == "wm" ]]; then
 		check_sudo
 		install_wm
-	elif [[ $cmd == "wifi" ]]; then
-		check_sudo
-		install_wifi
 	elif [[ $cmd == "dotfiles" ]]; then
 		install_dotfiles
-	elif [[ $cmd == "vim" ]]; then
-		install_vim
-	elif [[ $cmd == "docker" ]]; then
-		get_user
-		install_docker
 	elif [[ $cmd == "go" ]]; then
 		install_go
-	elif [[ $cmd == "aws" ]]; then
-		aws_cli
 	fi
 
 }
