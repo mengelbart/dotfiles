@@ -101,6 +101,16 @@ interval=10
 interval=30
 markup=pango
 
+[volume-pipewire]
+interval=once
+signal=1
+
+[miccontrol]
+#label=MIC
+SOURCE=alsa_input.usb-046d_C922_Pro_Stream_Webcam_E740DE4F-02.analog-stereo
+interval=1
+signal=10
+
 # Date Time
 #
 [time]
@@ -113,10 +123,6 @@ interval=5
 # The second parameter overrides the mixer selection
 # See the script for details.
 
-#[volume-pipewire]
-#interval=once
-#signal=1
-
 # Temperature
 #
 # Support multiple chips, though lm-sensors.
@@ -125,4 +131,3 @@ interval=5
 #[temperature]
 #label=TEMP
 #interval=10
-

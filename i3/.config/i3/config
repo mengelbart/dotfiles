@@ -305,6 +305,9 @@ bindsym XF86MonBrightnessDown exec light -U 10
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 0 toggle
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym XF86AudioPlay exec --no-startup-id playerctl -p spotify play-pause
+
+bindsym Print exec --no-startup-id pactl set-source-mute 0 toggle
+bindsym Scroll_Lock exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym Pause exec --no-startup-id playerctl -p spotify play-pause
 
 bindsym XF86KbdBrightnessUp exec sudo keyboard-backlight up
@@ -322,7 +325,7 @@ bindsym ctrl+space exec dunstctl close
 
 # autostart
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/hamburg_wallpaper.jpg
-exec --no-startup-id pasystray
+#exec --no-startup-id pasystray
 #exec xset s 0 -dpms
 #exec `$TERMINAL` -name welcome
 #exec urxvt -name mail -e zsh -c "mutt"
