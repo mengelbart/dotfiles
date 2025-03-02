@@ -269,6 +269,9 @@ exec --no-startup-id ~/bin/battery-notify.sh
 
 # output "*" bg /home/mathis/Pictures/hamburg_wallpaper.jpg fill
 
+Output DP-2 scale 2
+Output DP-3 scale 2
+
 input "type:keyboard" {
 	xkb_layout "us,de"
 	xkb_options "grp:alt_space_toggle"
