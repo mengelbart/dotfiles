@@ -323,6 +323,11 @@ exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 bindsym ctrl+space exec dunstctl close
 
+# set touchpad config
+exec xinput set-prop "DLL0945:00 06CB:76B1 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "DLL0945:00 06CB:76B1 Touchpad" "libinput Natural Scrolling Enabled" 1
+exec xinput set-prop "DLL0945:00 06CB:76B1 Touchpad" "libinput Accel Speed" 0.9
+
 # autostart
 exec --no-startup-id feh --bg-fill ${HOME}/Pictures/hamburg_wallpaper.jpg
 #exec --no-startup-id pasystray
