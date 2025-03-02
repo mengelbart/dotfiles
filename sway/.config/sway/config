@@ -266,7 +266,6 @@ bindsym ctrl+space exec dunstctl close
 # autostart
 exec --no-startup-id greenclip daemon
 exec --no-startup-id ~/bin/battery-notify.sh
-exec --no-startup-id pasystray
 
 # output "*" bg /home/mathis/Pictures/hamburg_wallpaper.jpg fill
 
