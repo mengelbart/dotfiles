@@ -264,7 +264,7 @@ bindsym $mod+Shift+minus exec grim -g "$(slurp)"
 bindsym ctrl+space exec dunstctl close
 
 # autostart
-exec_always --no-startup-id greenclip daemon
+exec --no-startup-id greenclip daemon
 exec --no-startup-id ~/bin/battery-notify.sh
 exec --no-startup-id pasystray
 
