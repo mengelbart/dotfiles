@@ -164,31 +164,6 @@ bindsym $mod+Shift+F10 move container to workspace $workspace20
 bindsym $mod+Shift+F11 move container to workspace $workspace21
 bindsym $mod+Shift+F12 move container to workspace $workspace22
 
-# workspace screens
-workspace $workspace1 output $lg $fujitsu eDP-1
-workspace $workspace2 output $lg $fujitsu eDP-1
-workspace $workspace3 output $lg $fujitsu eDP-1
-workspace $workspace4 output $lg $fujitsu eDP-1
-workspace $workspace5 output $lg $fujitsu eDP-1
-workspace $workspace6 output $lg $fujitsu eDP-1
-workspace $workspace7 output $lg $fujitsu eDP-1
-workspace $workspace8 output $lg $fujitsu eDP-1
-workspace $workspace9 output $lg $fujitsu eDP-1
-workspace $workspace10 output $lg $fujitsu eDP-1
-
-workspace $workspace11 output eDP-1 $lg $fujitsu
-workspace $workspace12 output eDP-1 $lg $fujitsu
-workspace $workspace13 output eDP-1 $lg $fujitsu
-workspace $workspace14 output eDP-1 $lg $fujitsu
-workspace $workspace15 output eDP-1 $lg $fujitsu
-workspace $workspace16 output eDP-1 $lg $fujitsu
-workspace $workspace17 output eDP-1 $lg $fujitsu
-workspace $workspace18 output eDP-1 $lg $fujitsu
-workspace $workspace19 output eDP-1 $lg $fujitsu
-workspace $workspace20 output eDP-1 $lg $fujitsu
-workspace $workspace21 output eDP-1 $lg $fujitsu
-workspace $workspace22 output eDP-1 $lg $fujitsu
-
 # move current window to scratchpad
 bindsym $mod+ctrl+minus move scratchpad
 bindsym $mod+plus scratchpad show
@@ -272,6 +247,9 @@ exec --no-startup-id ~/bin/battery-notify.sh
 
 Output DP-2 scale 2
 Output DP-3 scale 2
+
+Output eDP-1 pos 0 0
+Output DP-5 pos 1920 0
 
 input "type:keyboard" {
 	xkb_layout "us,de"
