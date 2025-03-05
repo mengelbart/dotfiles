@@ -263,3 +263,4 @@ input "type:touchpad" {
 	pointer_accel 0.3
 }
 
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
