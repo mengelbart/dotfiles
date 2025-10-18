@@ -1,1 +1,1 @@
-require'lspconfig'.pylsp.setup{}
+vim.lsp.enable('pylsp')

@@ -204,7 +204,6 @@ autocmd BufWritePre *.go lua vim.lsp.buf.format()
 autocmd BufWritePre *.cpp lua vim.lsp.buf.format()
 autocmd BufWritePre *.h lua vim.lsp.buf.format()
 autocmd BufWritePre *.rs lua vim.lsp.buf.format()
-autocmd BufWritePre *.go lua go_org_imports(1000)
 
 """""""""""""""""""""""""""""""""""""""""""""""
 " Import lua configs
